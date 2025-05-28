@@ -5,47 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lucide Static Icons Demo</title>
   <style>
-    :root {
-      --icon-color: #4caf50;
-      --icon-size: 48px;
-    }
     .icon {
-      width: var(--icon-size);
-      height: var(--icon-size);
-      stroke: var(--icon-color);
+      width: 48px;
+      height: 48px;
       fill: none;
       stroke-width: 2;
       display: inline-block;
       vertical-align: middle;
     }
-    .color-picker {
-      margin: 1em 0;
+    .done {
+      color: #9B5DE5;
     }
+    .info {
+      color: #00BBF9;
+    }
+    .accent {
+      color: #F054B2
+    }
+    .open {
+      color: #34A853;
+    }
+    .warn {
+      color: #EDC531;
+    }
+    .danger {
+      color: #f44336;
+    }
+    .default {
+      color: #59636E;
+    }
+    .light-bg {
+      background-color: #F7F7FF;
+      padding: 1em;
+      border-radius: 8px;
+    }
+    .dark-bg {
+      background-color: #2A1F33
+    }
+
   </style>
 </head>
 <body>
   <h1>Lucide Static Icons Demo 😊👍</h1>
   <div id="icons">
-    <img src="icons/check.svg" class="icon checkmark" alt="Check icon">
-    <img src="icons/x.svg" class="icon xmark" alt="X icon">
-    <img src="icons/star.svg" class="icon star" alt="Star icon">
+    <svg class="icon open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M20 6 9 17l-5-5"/></svg>
+    <svg class="icon danger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M18 6 6 18M6 6l12 12"/></svg>
   </div>
-  <style>
-    .checkmark {
-      stroke: #34A853;
-      width: 24px;
-      height: 24px;
-    }
-    .xmark {
-      stroke: #E63946;
-      width: 24px;
-      height: 24px;
-    }
-    .star {
-      stroke: #FBBF24;
-      width: 24px;
-      height: 24px;
-    }
-  </style>
 </body>
 </html>
