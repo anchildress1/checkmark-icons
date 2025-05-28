@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Build static site for GitHub Pages 😊👍",
+			"command": "cp index.html dist/index.html && mkdir -p dist/icons && cp -R icons/* dist/icons/",
+			"args": [],
+			"group": "build",
+			"isBackground": false
+		}
+	]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "checkmark-icons",
+  "version": "1.0.0",
+  "description": "Just needed a place to store some of these icons...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anchildress1/checkmark-icons.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anchildress1/checkmark-icons/issues"
+  },
+  "homepage": "https://github.com/anchildress1/checkmark-icons#readme",
+  "dependencies": {
+    "lucide-static": "^0.511.0"
+  }
+}
