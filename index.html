@@ -15,14 +15,24 @@
       type="image/png"
       sizes="any"
     />
-  <style>
-    /* Page layout */
+    <style>
+      /* Page layout */
     body {
       max-width: 90%;
       margin: 0 auto;
+    }
+    /* Center only header elements */
+    h1,
+    .logo-section,
+    blockquote {
       text-align: center;
     }
-    /* Apply Jura font and sizes to headings */
+    .content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+    }
+      /* Apply Jura font and sizes to headings */
       h1,
       h2,
       h3,
@@ -35,12 +45,12 @@
         font-size: 2.5rem;
         margin-bottom: 0em;
       }
-    h2 {
-      font-size: 2rem;
-      margin-top: 1em;
-      margin-bottom: 0.5em;
-      margin-left: 0;
-    }
+      h2 {
+        font-size: 2rem;
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+        margin-left: 0;
+      }
       .icons {
         width: 5em;
         height: 5em;
@@ -50,17 +60,17 @@
         height: auto;
         margin-right: 1em;
       }
-   .icon-figure {
-     display: inline-block;
-     text-align: center;
-   }
-  /* Center icon grids */
+      .icon-figure {
+        display: inline-block;
+        text-align: center;
+      }
+  /* Icon grids left-aligned within content */
   #icons {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
     gap: 1em;
-    margin: 1em 0;
+    margin: 1em auto;
   }
       .icon-figure figcaption {
         font-size: 0.875rem;
@@ -75,18 +85,18 @@
         margin-right: 0.5rem;
         margin-left: 45px;
       }
-    /* Logo section alignment */
-    .logo-section {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1.5rem;
-      margin-bottom: 1rem;
-    }
+      /* Logo section alignment */
+      .logo-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 1rem;
+      }
     </style>
   </head>
   <body>
-    <h1 style="margin-left: 5em">CheckMarK</h1>
+    <h1 style="font-size: 4em">CheckMarK</h1>
     <div class="logo-section">
       <figure class="icon-figure">
         <img
@@ -106,9 +116,10 @@
       </figure>
     </div>
     <blockquote>
-      <p>Welcome to CheckMarK – your friendly neighborhood icon library!</p>
+      <p>Welcome to CheckMarK -- your friendly neighborhood icon library!</p>
       <p>My personalized version of Octicons, with a splash of fun.</p>
-    </blockquote>
+  </blockquote>
+  <div class="content">
     <h2>Random</h2>
     <div id="icons">
       <figure class="icon-figure">
@@ -320,7 +331,8 @@
       </figure>
     </div>
 
-    <hr />
+  </div>
+  <hr />
     <footer>
       <small>&copy; 2025 | Ashley Childress</small>
     </footer>
