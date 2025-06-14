@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/anchildress1/checkmark-icons#readme",
   "dependencies": {
+    "@primer/octicons": "^19.15.2",
     "lucide-static": "^0.511.0"
   }
 }
