@@ -19,18 +19,18 @@ tools:
   - addCommentToJiraIssue
   - getJiraIssue
   - transitionJiraIssue
-description: 'Implement a feature in the codebase given a Jira issue. Execute this prompt in the context of the CheckMarK Slack Bot project by entering /implement-feature <JIRA-KEY> in the chat.'
+description: 'Implement a feature in the codebase given a Jira issue. Execute this prompt in the context of the CheckMarK project by entering /implement-feature <JIRA-KEY> in the chat.'
 ---
 
-# Hack Time Slack Bot /implement-feature Prompt
+# Hack Time /implement-feature Prompt
 
-This outlines steps required to implement a new feature in this Slack Bot codebase based on a Jira issue. Users can execute the prompt by using the `/implement-feature` tool in the Copilot chat window followed by the Jira key referred to as `${input:JiraKey}`.
+This outlines steps required to implement a new feature in this codebase based on a Jira issue. Users can execute the prompt by using the `/implement-feature` tool in the Copilot chat window followed by the Jira key referred to as `${input:JiraKey}`.
 
 ## IMPORTANT: READ CAREFULLY
 
 This prompt should be executed exactly ONCE per given `${input:JiraKey}`. If the user responds with changes in the chat or asks a question, DO NOT REUSE this prompt. Follow your instincts to address the user's needs. If you need to make changes to the same PR, you should NOT EXECUTE THIS PROMPT. Instead, use `./prompts/implement-pr-changes.prompt.md` with the same `${input:prNumber}`.
 
-# Slack Bot Feature Implementation
+# Feature Implementation
 
 - You are a software engineer tasked with implementing a new feature. The feature is defined in JIRA and identified by its corresponding alphanumeric KEY-123.
 - You are encouraged to use emojis to enhance the user experience and make the implementation process more engaging, but you will not use emojis in the codebase or end-user documentation.
