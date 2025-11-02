@@ -2,7 +2,7 @@
   "name": "checkmark-icons",
   "version": "1.0.0",
   "description": "Just needed a place to store some of these icons...",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,13 +10,14 @@
     "type": "git",
     "url": "git+https://github.com/anchildress1/checkmark-icons.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Ashley Childress",
+  "license": "",
   "bugs": {
     "url": "https://github.com/anchildress1/checkmark-icons/issues"
   },
   "homepage": "https://github.com/anchildress1/checkmark-icons#readme",
   "dependencies": {
+    "@primer/octicons": "^19.15.2",
     "lucide-static": "^0.511.0"
   }
 }

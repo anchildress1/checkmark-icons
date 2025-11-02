@@ -1,45 +1,393 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lucide Static Icons Demo</title>
-  <style>
-    :root {
-      --icon-color: #4caf50;
-      --icon-size: 48px;
-    }
-    .icon {
-      width: var(--icon-size);
-      height: var(--icon-size);
-      stroke: var(--icon-color);
-      fill: none;
-      stroke-width: 2;
-      display: inline-block;
-      vertical-align: middle;
-    }
-    .color-picker {
-      margin: 1em 0;
-    }
-  </style>
-</head>
-<body>
-  <h1>CheckMarK Icons 😊👍</h1>
-  <label class="color-picker">
-    Pick icon color:
-    <input type="color" id="colorInput" value="#4caf50">
-  </label>
-  <div id="icons">
-    <img src="dist/icons/check.svg" class="icon" alt="Check icon" style="width:24px;height:24px;stroke:#34A853;">
-    <img src="dist/icons/x.svg" class="icon" alt="X icon" style="width:24px;height:24px;stroke:#E63946;">
-    <img src="dist/icons/star.svg" class="icon" alt="Star icon">
-  </div>
-  <script>
-    document.getElementById('colorInput').addEventListener('input', (e) => {
-      document.documentElement.style.setProperty('--icon-color', e.target.value);
-    });
-  </script>
-</body>
-</html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CheckMarK Icons</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Favicon: display logo in browser tab -->
+    <link
+      rel="icon"
+      href="https://raw.githubusercontent.com/anchildress1/checkmark-icons/refs/heads/gh-pages/icons/cm-pulse.svg"
+      type="image/png"
+      sizes="any"
+    />
+    <style>
+      /* Page layout */
+      body {
+        max-width: 90%;
+        margin: 0 auto;
+        padding-bottom: 2em;
+      }
+      /* Center only header elements */
+      h1,
+      .logo-section,
+      blockquote {
+        text-align: center;
+      }
+      .content {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: left;
+      }
+      /* Apply Jura font and sizes to headings */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Jura", sans-serif;
+      }
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0em;
+      }
+      h2 {
+        font-size: 2rem;
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+        margin-left: 0;
+      }
+      .icons {
+        width: 1em;
+        height: 1em;
+      }
+      .img {
+        width: 100%;
+        height: auto;
+        margin-right: 1em;
+      }
+      .icon-figure {
+        display: inline-block;
+        text-align: center;
+      }
+      /* Icon grids left-aligned within content */
+      #icons {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 1em;
+        margin: 1em auto;
+      }
+      .icon-figure figcaption {
+        font-size: 0.875rem;
+        color: #2a1f33;
+        margin-top: 0.5em;
+      }
 
+      .logo {
+        width: 4rem;
+        height: 4rem;
+        display: block;
+        margin: 0 auto 0.5rem;
+      }
+      /* Logo section alignment */
+      .logo-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      /* Center each logo and caption */
+      .logo-section .icon-figure {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      /* Increase figcaption size for header logos */
+      .logo-section .icon-figure figcaption {
+        font-size: 1rem;
+      }
+      /* Add whitespace below footer */
+      footer {
+        margin-bottom: 0.05em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="font-size: 4em">CheckMarK</h1>
+    <div class="logo-section">
+      <figure class="icon-figure">
+        <img
+          class="logo"
+          src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/gh-pages/logos/checkmark-logo.png"
+          alt="CheckMarK logo"
+        />
+        <figcaption>CheckMarK</figcaption>
+      </figure>
+      <figure class="icon-figure">
+        <img
+          class="logo"
+          src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/gh-pages/logos/checkmark-chat-logo.png"
+          alt="CheckMarK Chat logo"
+        />
+        <figcaption>CheckMarK Chat</figcaption>
+      </figure>
+    </div>
+    <blockquote>
+      <p>Welcome to CheckMarK -- your friendly neighborhood icon library!</p>
+      <p>My personalized version of Octicons, with a splash of fun.</p>
+      <hr />
+      <p>Plus, the very tiny versions of above for easier GitHub display:
+        <img
+          class="icons"
+          src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/refs/heads/gh-pages/logos/checkmark-logo-icon.png"
+          alt="CheckMarK Logo, icon-sized"
+          />
+        <img
+          class="icons"
+          src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/refs/heads/gh-pages/logos/checkmark-chat-logo-icon.png"
+          alt="CheckMarK Chat Logo, icon-sized"
+        />
+      </p>
+    </blockquote>
+    <div class="content">
+      <h2>Random</h2>
+      <div id="icons">
+        <figure class="icon-figure">
+          <img
+            class="icons"
+            src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/refs/heads/gh-pages/icons/cm-pulse.svg"
+            alt="CheckMarK pulse emoji"
+          />
+          <figcaption>:cm-pulse:</figcaption>
+        </figure>
+        <figure class="icon-figure">
+          <img
+            class="icons"
+            src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/refs/heads/gh-pages/icons/cm-unfold.svg"
+            alt="CheckMarK unfold emoji"
+          />
+          <figcaption>:cm-unfold:</figcaption>
+        </figure>
+        <figure class="icon-figure">
+          <img
+            class="icons"
+            src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/refs/heads/gh-pages/icons/cm-fold.svg"
+            alt="CheckMarK fold emoji"
+          />
+          <figcaption>:cm-fold:</figcaption>
+        </figure>
+        <figure class="icon-figure">
+          <img
+            class="icons"
+            src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/gh-pages/icons/cm-commit.svg"
+            alt="CheckMarK commit emoji"
+          />
+          <figcaption>:cm-commit:</figcaption>
+        </figure>
+        <figure class="icon-figure">
+          <img
+            class="icons"
+            src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/gh-pages/icons/cm-tag.svg"
+            alt="CheckMarK tag emoji"
+          />
+          <figcaption>:cm-tag:</figcaption>
+        </figure>
+        <figure class="icon-figure">
+          <img
+            class="icons"
+            src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/refs/heads/gh-pages/icons/cm-radio.svg"
+            alt="CheckMarK radio emoji"
+          />
+          <figcaption>:cm-radio:</figcaption>
+        </figure>
+      </div>
+      <h2>PR Status</h2>
+      <div id="icons">
+        <figure class="icon-figure">
+          <img
+            class="icons"
+            src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/refs/heads/gh-pages/icons/cm-requested.svg"
+            alt="CheckMarK requested emoji"
+          />
+          <figcaption>:cm-requested:</figcaption>
+        </figure>
+        <figure class="icon-figure">
+          <img
+            class="icons"
+            src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/refs/heads/gh-pages/icons/cm-ghost.svg"
+            alt="CheckMarK ghost emoji"
+          />
+          <figcaption>:cm-ghost:</figcaption>
+        </figure>
+        <figure class="icon-figure">
+          <img
+            class="icons"
+            src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/refs/heads/gh-pages/icons/cm-in-works.svg"
+            alt="CheckMarK in-works emoji"
+          />
+          <figcaption>:cm-in-works:</figcaption>
+        </figure>
+        <figure class="icon-figure">
+          <img
+            class="icons"
+            src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/refs/heads/gh-pages/icons/cm-mergable.svg"
+            alt="CheckMarK mergable emoji"
+          />
+          <figcaption>:cm-mergable:</figcaption>
+        </figure>
+      </div>
+      <h2>Pull Requests</h2>
+      <div id="icons">
+        <figure class="icon-figure">
+          <img
+            class="icons"
+            src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/refs/heads/gh-pages/icons/cm-pr-approved.svg"
+            alt="CheckMark PR approved emoji"
+          />
+          <figcaption>:cm-pr-approved:</figcaption>
+        </figure>
+        <figure class="icon-figure">
+          <img
+            class="icons"
+            src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/refs/heads/gh-pages/icons/cm-pr-requested.svg"
+            alt="CheckMarK PR requested emoji"
+          />
+          <figcaption>:cm-pr-requested:</figcaption>
+        </figure>
+        <figure class="icon-figure">
+          <img
+            class="icons"
+            src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/refs/heads/gh-pages/icons/cm-pr-changes.svg"
+            alt="CheckMarK PR changes emoji"
+          />
+          <figcaption>:cm-pr-changes:</figcaption>
+        </figure>
+        <figure class="icon-figure">
+          <img
+            class="icons"
+            src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/refs/heads/gh-pages/icons/cm-pr-merged.svg"
+            alt="CheckMark PR merged emoji"
+          />
+          <figcaption>:cm-pr-merged:</figcaption>
+        </figure>
+        <figure class="icon-figure">
+          <img
+            class="icons"
+            src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/refs/heads/gh-pages/icons/cm-pr-draft.svg"
+            alt="CheckMarK PR draft emoji"
+          />
+          <figcaption>:cm-pr-draft:</figcaption>
+        </figure>
+        <figure class="icon-figure">
+          <img
+            class="icons"
+            src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/refs/heads/gh-pages/icons/cm-pr-closed.svg"
+            alt="CheckMarK PR closed emoji"
+          />
+          <figcaption>:cm-pr-closed:</figcaption>
+        </figure>
+      </div>
+      <h2>Build status</h2>
+      <div id="icons">
+        <figure class="icon-figure">
+          <img
+            class="icons"
+            src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/refs/heads/gh-pages/icons/cm-check.svg"
+            alt="CheckMarK check emoji"
+          />
+          <figcaption>:cm-check:</figcaption>
+        </figure>
+        <figure class="icon-figure">
+          <img
+            class="icons"
+            src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/refs/heads/gh-pages/icons/cm-x.svg"
+            alt="CheckMarK x emoji"
+          />
+          <figcaption>:cm-x:</figcaption>
+        </figure>
+        <figure class="icon-figure">
+          <img
+            class="icons"
+            src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/refs/heads/gh-pages/icons/cm-dot.svg"
+            alt="CheckMarK dot emoji"
+          />
+          <figcaption>:cm-dot:</figcaption>
+        </figure>
+      </div>
+      <h2>Review Status</h2>
+      <div id="icons">
+        <figure class="icon-figure">
+          <img
+            class="icons"
+            src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/gh-pages/icons/cm-review.svg"
+            alt="CheckMarK review emoji"
+          />
+          <figcaption>:cm-review:</figcaption>
+        </figure>
+        <figure class="icon-figure">
+          <img
+            class="icons"
+            src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/gh-pages/icons/cm-changes.svg"
+            alt="CheckMarK changes emoji"
+          />
+          <figcaption>:cm-changes:</figcaption>
+        </figure>
+        <figure class="icon-figure">
+          <img
+            class="icons"
+            src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/gh-pages/icons/cm-approved.svg"
+            alt="CheckMarK approved emoji"
+          />
+          <figcaption>:cm-approved:</figcaption>
+        </figure>
+        <figure class="icon-figure">
+          <img
+            class="icons"
+            src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/gh-pages/icons/cm-recheck.svg"
+            alt="CheckMarK recheck emoji"
+          />
+          <figcaption>:cm-recheck:</figcaption>
+        </figure>
+      </div>
+      <h2>Urgency</h2>
+      <div id="icons">
+        <figure class="icon-figure">
+          <img
+            class="icons"
+            src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/gh-pages/icons/cm-info.svg"
+            alt="CheckMarK info emoji"
+          />
+          <figcaption>:cm-info:</figcaption>
+        </figure>
+        <figure class="icon-figure">
+          <img
+            class="icons"
+            src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/gh-pages/icons/cm-warn.svg"
+            alt="CheckMarK warn emoji"
+          />
+          <figcaption>:cm-warn:</figcaption>
+        </figure>
+        <figure class="icon-figure">
+          <img
+            class="icons"
+            src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/gh-pages/icons/cm-urgent.svg"
+            alt="CheckMarK urgent emoji"
+          />
+          <figcaption>:cm-urgent:</figcaption>
+        </figure>
+      </div>
+    </div>
+    <hr />
+    <footer>
+      <img
+        class="icons"
+        src="https://raw.githubusercontent.com/anchildress1/checkmark-icons/refs/heads/gh-pages/icons/cm-copyright.svg"
+        alt="Copyright icon"
+        style="
+          width: 1em;
+          height: 1em;
+          vertical-align: middle;
+          margin-right: 0.25em;
+        "
+      />
+      <small> 2025 | Ashley Childress</small>
+    </footer>
+  </body>
 </html>
