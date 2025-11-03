@@ -1,6 +1,6 @@
 {
   "name": "checkmark-icons",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Just needed a place to store some of these icons...",
   "type": "module",
   "scripts": {
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/anchildress1/checkmark-icons.git"
   },
   "author": "Ashley Childress",
-  "license": "",
+  "license": "Polyform License 1.0.0",
   "bugs": {
     "url": "https://github.com/anchildress1/checkmark-icons/issues"
   },

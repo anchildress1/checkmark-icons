@@ -1,6 +1,8 @@
 Polyform Shield License 1.0.0
 
-Copyright (c) 2025 Ashley Childress \ ChecKMarK DevTools
+Applies to everything in this repo except for the `./icons/**` folder, which were borrowed from GitHub originally. So those stay with their MIT license instead.
+
+Copyright (c) 2025 ChecKMarK DevTools / Ashley Childress
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to use,
@@ -13,11 +15,11 @@ copy, modify, and/or distribute the Software for any purpose—including persona
    - **You CANNOT** resell, offer as a paid service, or monetize this project or its derivatives without prior written approval.
 
 2. **Endorsement.**
-   Neither the names of Ashley Childress, ChecKMarK DevTools, nor the names of any contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+   Neither the name of ChecKMarK DevTools or Ashley Childress nor the names of any contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
 3. **Attribution.**
    Any public fork, copy, or substantial reuse must include this LICENSE and a clear statement in your documentation or README:
-   “Based on original work by Ashley Childress / ChecKMarK DevTools – see \[original repo link\].”
+   “Based on original work by for ChecKMarKDevTools created by Ashley Childress – see \[original repo link\].”
 
 4. **No Warranty.**
    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.

@@ -1,0 +1,8 @@
+title: ChecKMarK DevTools Icons — Jekyll Demo
+email: human@checkmarkdevtools.dev
+description: >-
+  Sample Jekyll site used to compare GitHub Pages deployment strategies.
+baseurl: "/jekyll"
+url: ""
+theme: minima
+markdown: kramdown

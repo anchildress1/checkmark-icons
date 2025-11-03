@@ -1,0 +1,213 @@
+name: Compare GitHub Pages strategies
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Prepare vanilla static export
+        run: |
+          rm -rf build/plain
+          mkdir -p build/plain/icons
+          cp index.html build/plain/index.html
+          cp -R icons/. build/plain/icons/
+
+      - name: Build Node-powered icon catalog
+        run: node scripts/build-icon-catalog.mjs build/icon-catalog
+
+      - name: Build Jekyll demo site
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./jekyll-site
+          destination: ./build/jekyll
+
+      - name: Generate comparison landing page
+        run: |
+          cat <<'EOF' > build/index.html
+          <!DOCTYPE html>
+          <html lang="en">
+            <head>
+              <meta charset="utf-8" />
+              <meta name="viewport" content="width=device-width, initial-scale=1" />
+              <title>CheckMarK — Pages Strategy Playground</title>
+              <style>
+                :root {
+                  color-scheme: light dark;
+                  font-family: "Jura", system-ui, sans-serif;
+                }
+                body {
+                  margin: 0 auto;
+                  padding: 2.5rem clamp(1.5rem, 5vw, 4rem);
+                  max-width: 1200px;
+                  line-height: 1.7;
+                  background: radial-gradient(circle at top, rgba(148, 163, 184, 0.18), transparent 55%) #f8fafc;
+                }
+                header {
+                  text-align: center;
+                  margin-bottom: 3rem;
+                }
+                h1 {
+                  margin: 0 0 0.75rem;
+                  font-size: clamp(2.75rem, 6vw, 4.5rem);
+                  letter-spacing: 0.04em;
+                }
+                p {
+                  margin: 0.5rem 0;
+                }
+                .grid {
+                  display: grid;
+                  gap: 1.75rem;
+                  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                }
+                article {
+                  border-radius: 18px;
+                  background: rgba(255, 255, 255, 0.82);
+                  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+                  border: 1px solid rgba(148, 163, 184, 0.25);
+                  padding: 1.75rem;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 1rem;
+                }
+                h2 {
+                  margin: 0;
+                  font-size: 1.35rem;
+                }
+                ul {
+                  margin: 0;
+                  padding-left: 1.2rem;
+                }
+                a.demo {
+                  margin-top: auto;
+                  align-self: flex-start;
+                  display: inline-flex;
+                  gap: 0.5rem;
+                  align-items: center;
+                  background: #2563eb;
+                  color: white;
+                  padding: 0.55rem 1.1rem;
+                  border-radius: 999px;
+                  text-decoration: none;
+                  font-weight: 600;
+                  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.25);
+                }
+                a.demo:hover {
+                  transform: translateY(-1px);
+                  box-shadow: 0 16px 34px rgba(37, 99, 235, 0.3);
+                }
+                footer {
+                  margin-top: 4rem;
+                  text-align: center;
+                  font-size: 0.95rem;
+                  color: #475569;
+                }
+                code {
+                  font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+                  font-size: 0.95rem;
+                }
+              </style>
+            </head>
+            <body>
+              <header>
+                <h1>CheckMarK Pages Playground</h1>
+                <p>
+                  Three deployment variations live side-by-side under subfolders. Explore how
+                  static copies, Node-powered builds, and Jekyll outputs behave on GitHub Pages.
+                </p>
+              </header>
+              <main class="grid">
+                <article>
+                  <h2>Vanilla static export</h2>
+                  <p>
+                    Directly copies the repository's <code>index.html</code> and <code>icons/</code>
+                    into the publish bundle. This is the closest match to the existing GitHub Pages setup.
+                  </p>
+                  <ul>
+                    <li>No build tooling required</li>
+                    <li>Great for lightweight sites or hand-authored HTML</li>
+                    <li>Deploy target: <code>/plain</code></li>
+                  </ul>
+                  <a class="demo" href="./plain/" rel="noopener">View /plain →</a>
+                </article>
+                <article>
+                  <h2>Node.js generated catalog</h2>
+                  <p>
+                    Runs <code>scripts/build-icon-catalog.mjs</code> to enumerate SVGs and assemble a
+                    gallery page. Demonstrates using JavaScript as a build step without heavy frameworks.
+                  </p>
+                  <ul>
+                    <li>Leverages the latest <code>actions/setup-node</code></li>
+                    <li>Keeps assets self-contained for easy reuse</li>
+                    <li>Deploy target: <code>/icon-catalog</code></li>
+                  </ul>
+                  <a class="demo" href="./icon-catalog/" rel="noopener">View /icon-catalog →</a>
+                </article>
+                <article>
+                  <h2>Jekyll themed site</h2>
+                  <p>
+                    Builds the <code>jekyll-site/</code> folder via <code>actions/jekyll-build-pages</code>
+                    using the Minima theme. Useful when you prefer Markdown, Liquid layouts, or blog features.
+                  </p>
+                  <ul>
+                    <li>Supports navigation, blog posts, and collections</li>
+                    <li>Uses GitHub Pages' native Jekyll toolchain</li>
+                    <li>Deploy target: <code>/jekyll</code></li>
+                  </ul>
+                  <a class="demo" href="./jekyll/" rel="noopener">View /jekyll →</a>
+                </article>
+              </main>
+              <footer>
+                <p>Generated automatically during CI — swap, extend, or remove variations as needed.</p>
+              </footer>
+            </body>
+          </html>
+          EOF
+
+      - name: Assemble deployment artifact
+        run: |
+          rm -rf dist
+          mkdir -p dist
+          cp -R build/plain dist/plain
+          cp -R build/icon-catalog dist/icon-catalog
+          cp -R build/jekyll dist/jekyll
+          cp build/index.html dist/index.html
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4

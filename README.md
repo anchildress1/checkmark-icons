@@ -4,8 +4,16 @@
 
 ## License
 
-Because this repository contains images and other assets from various sources, the licensing is as follows:
+Everything in this repository—code, images, and any other assets—is licensed under the [PolyForm Shield License 1.0.0](./LICENSE).  The [`icons/` directory](./icons) is the only exception and is covered by the standard MIT license, which is included in that directory for convenience. I borrowed those from GitHub, so it only makes sensse to stick to the original.
 
-Everything except images located in the [`logos/` directory](./logos) is licensed under the [Apache License 2.0](./LICENSE). Images located in the [`logos/` directory](./logos) are copies from other projects that are each licensed separately under the [Polyform Shield License 1.0.0](./logos/LICENSE).
+> TL;DR: you’re welcome to use the assets personally or privately, but you can’t monetize or profit from them without explicit permission. Review the license files for full terms.
 
-> Basically, you can use anything in this repo for free, including commercial use, as long as you provide attribution and don't hold me liable for anything. For logos specifically, they may be used as long as they are in no way sold, used for the explicit purpose of making a profit, or used for endorsement. See the LICENSE files for more details.
+## GitHub Pages Playground
+
+Curious how different GitHub Pages strategies feel? The workflow at `.github/workflows/compare-pages.yml` publishes three side-by-side variants under the live site:
+
+- `/plain/` — an untouched copy of `index.html` plus the `icons/` directory.
+- `/icon-catalog/` — a Node-generated gallery built via `scripts/build-icon-catalog.mjs`.
+- `/jekyll/` — a miniature Jekyll site sourced from `jekyll-site/` and rendered with the Minima theme.
+
+The workflow uploads a single artifact and deploys it without keeping a dedicated `gh-pages` branch history, so you can mix, match, or remove variants whenever you want.
