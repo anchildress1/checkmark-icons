@@ -95,7 +95,7 @@ This prompt should be executed exactly ONCE per given `${input:JiraKey}`. If the
 - You will write integration tests to verify that the feature works correctly with other components of the system.
 - You will run all tests to ensure that the code is functioning correctly and does not introduce any regressions.
 - You will verify that all tests pass and none are skipped before proceeding to the next step.
-- You will verify code coverage meets expectations defined in `../../vitest.config.mjs` to ensure that all critical paths are tested.
+- You will verify code coverage meets expectations defined in `../../vitest.config.js` to ensure that all critical paths are tested.
 
 5. **Documentation**:
 

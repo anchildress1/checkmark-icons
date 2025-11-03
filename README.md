@@ -13,7 +13,7 @@ Everything in this repository—code, images, and any other assets—is licensed
 Curious how different GitHub Pages strategies feel? The workflow at `.github/workflows/compare-pages.yml` publishes three side-by-side variants under the live site:
 
 - `/plain/` — an untouched copy of `index.html` plus the `icons/` directory.
-- `/icon-catalog/` — a Node-generated gallery built via `scripts/build-icon-catalog.mjs`.
+- `/icon-catalog/` — a Node-generated gallery built via `scripts/build-icon-catalog.js`.
 - `/jekyll/` — a miniature Jekyll site sourced from `jekyll-site/` and rendered with the Minima theme.
 
 The workflow uploads a single artifact and deploys it without keeping a dedicated `gh-pages` branch history, so you can mix, match, or remove variants whenever you want.

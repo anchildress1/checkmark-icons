@@ -37,7 +37,7 @@ jobs:
           cp -R icons/. build/plain/icons/
 
       - name: Build Node-powered icon catalog
-        run: node scripts/build-icon-catalog.mjs build/icon-catalog
+        run: node scripts/build-icon-catalog.js build/icon-catalog
 
       - name: Build Jekyll demo site
         uses: actions/jekyll-build-pages@v1
@@ -156,7 +156,7 @@ jobs:
                 <article>
                   <h2>Node.js generated catalog</h2>
                   <p>
-                    Runs <code>scripts/build-icon-catalog.mjs</code> to enumerate SVGs and assemble a
+                    Runs <code>scripts/build-icon-catalog.js</code> to enumerate SVGs and assemble a
                     gallery page. Demonstrates using JavaScript as a build step without heavy frameworks.
                   </p>
                   <ul>
